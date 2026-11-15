@@ -8,8 +8,8 @@ authors = [
 ]
 requires-python = ">=3.13"
 dependencies = [
+    "aio-pika>=10.2.3",
     "nicegui>=4.0.0",
-    "pika>=1.4.4",
 ]
 
 [project.scripts]
@@ -18,3 +18,8 @@ rabbit-display-emulator = "rabbit_display_emulator:main"
 [build-system]
 requires = ["uv_build>=0.13.8,<0.14.0"]
 build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pika>=1.4.4",
+]

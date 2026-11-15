@@ -3,6 +3,19 @@ revision = 5
 requires-python = ">=3.13"
 
 [[package]]
+name = "aio-pika"
+version = "10.2.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "aiormq" },
+    { name = "yarl" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/e2/e5/0306621c02feed03d73df7df6e453742aee71468200c5a3b764e3dccfc3e/aio_pika-10.2.3.tar.gz", hash = "sha256:217bb7c8a10a21c41bb86ba4bd2f4ff59540d6fa7b72cb4bf30e4038563df353", size = 101648, upload-time = "2026-11-08T19:00:44.846Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/4f/f2/0a7c530dc8d969824ffc1a7562e1bd33e8c561e09fde633108a4923c9613/aio_pika-10.2.3-py3-none-any.whl", hash = "sha256:7697e3d273e3a2a1b6bdaa96e5105650fb2543c78ba639aa6e9327430acea9d3", size = 61705, upload-time = "2026-11-08T19:00:43.505Z" },
+]
+
+[[package]]
 name = "aiofiles"
 version = "25.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -141,6 +154,19 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/a4/78/49b0299da6d54de19fc6fdc6889d50233ac47d192a461624f4fc010fde83/aiohttp-3.14.5-cp315-cp315t-win_amd64.whl", hash = "sha256:0e6f16f5e49c4b8267988c05ab07760d7064cea57d077c3d068d04b0fbb992cb", size = 530957, upload-time = "2026-10-11T01:05:02.23Z" },
     { url = "https://files.pythonhosted.org/packages/21/d4/b0afc936aeb6d2f93157e3408b069ec5d7934429ae7d023de5e0953b1887/aiohttp-3.14.5-cp315-cp315t-win_arm64.whl", hash = "sha256:1aead151c3abbac6b32942e452020cb66d7efc099d253cc6c20f748e926c858b", size = 510408, upload-time = "2026-10-11T01:05:05.362Z" },
     { url = "https://files.pythonhosted.org/packages/68/30/173960c42b05a6c59f7558e4b12a4b0d9ba376cf6aa9bde7f9e08a30ca8d/aiohttp-3.14.5-py3-none-any.whl", hash = "sha256:efc21a454892828368b11c2c780de0ff8bc991f73f6b99c6b66e56205470929b", size = 279517, upload-time = "2026-10-11T01:05:08.523Z" },
+]
+
+[[package]]
+name = "aiormq"
+version = "7.2.5"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pamqp" },
+    { name = "yarl" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/a8/c3/18ca94e389ba11a17778160780fa25da5e153a1deb787c5158fa48fdbff6/aiormq-7.2.5.tar.gz", hash = "sha256:250dc99381c004e0b9c3a58a38b0fc04564339aa1e05740fcf3a9578fe810fc2", size = 81592, upload-time = "2026-11-01T12:01:44.908Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/fe/4e/2e4e274d4f717aa38e536dc23388f0e4a3c2929a9d07b941ca539021d417/aiormq-7.2.5-py3-none-any.whl", hash = "sha256:c408686d190d10788ca132899c5ede6b123541bee2ce54ea7167404fac11d779", size = 40696, upload-time = "2026-11-01T12:01:43.45Z" },
 ]
 
 [[package]]
@@ -791,6 +817,15 @@ wheels = [
 ]
 
 [[package]]
+name = "pamqp"
+version = "5.0.0"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/db/10/3a0d1040a1bac414ef1b4cb9b6f53344b6bc33e57eef287ac58d6dc1d1de/pamqp-5.0.0.tar.gz", hash = "sha256:d76dd4af900802483cda5f318a5328c86a1e9b127159f5455b17d9a0bb658b89", size = 137474, upload-time = "2026-10-30T15:41:57.894Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/ed/ac/fd44d9085dc1270e9f6a9eae0a08bbc69d8354c66623c647fe45ecd4b97d/pamqp-5.0.0-py3-none-any.whl", hash = "sha256:f426351b57f6a9e453ee27682431e532c44771cb61b4f74018b8a7088f4cac20", size = 32793, upload-time = "2026-10-30T15:41:56.381Z" },
+]
+
+[[package]]
 name = "pika"
 version = "1.4.4"
 source = { registry = "https://pypi.org/simple" }
@@ -1096,15 +1131,23 @@ name = "rabbit-display-emulator"
 version = "0.1.0"
 source = { editable = "." }
 dependencies = [
+    { name = "aio-pika" },
     { name = "nicegui" },
+]
+
+[package.dev-dependencies]
+dev = [
     { name = "pika" },
 ]
 
 [package.metadata]
 requires-dist = [
+    { name = "aio-pika", specifier = ">=10.2.3" },
     { name = "nicegui", specifier = ">=4.0.0" },
-    { name = "pika", specifier = ">=1.4.4" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "pika", specifier = ">=1.4.4" }]
 
 [[package]]
 name = "simple-websocket"
