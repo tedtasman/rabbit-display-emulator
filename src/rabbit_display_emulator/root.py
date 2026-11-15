@@ -2,29 +2,7 @@ from nicegui import ui
 
 SMALL_TEXT_SIZE = "75px"
 
-
-display = {
-    "left": {
-        "text": "ABC",
-        "large": "123",
-        "small": "123",
-        "pips": 1
-    },
-    "shared": {
-        "time": "12:34",
-        "small": "12",
-    },
-    "right": {
-        "text": "DEF",
-        "large": "456",
-        "small": "456",
-        "pips": 2
-    },
-}
-
-
-
-def root():
+def root(display):
 
     ui.add_css('''
         @import url('https://fonts.googleapis.com/css2?family=Bitcount+Grid+Single:wght@100..900&family=Special+Gothic:wght@400..700&display=swap');
@@ -66,4 +44,3 @@ def root():
                     else:
                         ui.label().classes("flex justify-center content-center").bind_text(display, (section, element))
 
-ui.run(root, title="Display Emulator")

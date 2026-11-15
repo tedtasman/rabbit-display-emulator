@@ -1,2 +1,5 @@
-def main() -> None:
-    print("Hello from rabbit-display-emulator!")
+from rabbit_display_emulator.root import root
+
+__all__ = [
+    "root"
+]
