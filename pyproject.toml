@@ -1,0 +1,20 @@
+[project]
+name = "rabbit-display-emulator"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Theodore Tasman", email = "contact@ttasman.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "nicegui>=4.0.0",
+    "pika>=1.4.4",
+]
+
+[project.scripts]
+rabbit-display-emulator = "rabbit_display_emulator:main"
+
+[build-system]
+requires = ["uv_build>=0.13.8,<0.14.0"]
+build-backend = "uv_build"
