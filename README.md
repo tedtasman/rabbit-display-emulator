@@ -9,8 +9,8 @@ Emulates a hypothetical display which receives updates via RabbitMQ. Intended as
 
 ## Requirements
 
-- RabbitMQ
-- uv
+- [RabbitMQ](https://www.rabbitmq.com/docs/download)
+- [uv](https://docs.astral.sh/uv/#installation)
 
 ## Usage
 
