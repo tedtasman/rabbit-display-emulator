@@ -30,7 +30,7 @@ uv sync
 Run emulator:
 
 ```bash
-uv run ./emulator.py # displays on localhost:8080
+uv run ./emulator.py    # displays on localhost:8080
 ```
 
 Run test:
